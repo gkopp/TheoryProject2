@@ -48,7 +48,10 @@ for line in open(FA, "r+"):
 
     # Accepting states
     elif line_num == 4:
-        accepting_states = line.split(',')
+        state_list = line.split(',')
+        accepting_states = []
+        for state_name in state_list:
+            accepting_states.append(translate[state_name])
 
     # Transition rules
     else:
@@ -82,5 +85,8 @@ for line in open(test_strings, 'r+'):
                 break
         if found == False:
             print "Impossible Transition"
-    print visited
+    if current_state in accepting_states:    
+        print visited
+    else:
+       print "Does not end in accepting state"
 
