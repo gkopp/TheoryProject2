@@ -41,6 +41,10 @@ for line in open(FA, "r+"):
         for state in states:
             translate[state] = i
             i = i + 1
+        translate_back = {}
+        for x in translate:
+            i = translate[x]
+            translate_back[i] = x
 
     # Start state
     elif line_num == 3:
@@ -86,7 +90,10 @@ for line in open(test_strings, 'r+'):
         if found == False:
             print "Impossible Transition"
     if current_state in accepting_states:    
-        print visited
+        for state in visited:
+            print translate_back[state] + " ",
+        print
+    
     else:
        print "Does not end in accepting state"
 
