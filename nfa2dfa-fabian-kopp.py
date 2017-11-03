@@ -11,7 +11,6 @@ NFA = {
 	"states": [],
 	"startState": "",
 	"acceptingStates": [],
-	"rejectedStates": [],
 	"transferFunction": {}
 }
 
@@ -21,7 +20,6 @@ DFA = {
 	"states": [],
 	"startState": "",
 	"acceptingStates": [],
-	"rejectedStates": [],
 	"transferFunction": {}
 }
 
@@ -123,9 +121,9 @@ for i, line in enumerate(f):
 		print("Start state : " + startState)
 	elif i == 4:
 		acceptingStates = line.split(',')
-		rejectedStates = list(set(states).difference(set(acceptingStates)))
+		#rejectedStates = list(set(states).difference(set(acceptingStates)))
 		NFA["acceptingStates"] = acceptingStates
-		NFA["rejectedStates"] = rejectedStates
+		#NFA["rejectedStates"] = rejectedStates
 		print("Accepting states : " + str(acceptingStates))
 	else:
 		print("Rule "+ str(i-4) +" : "+ line)
@@ -145,6 +143,10 @@ while (len(statesToExplore)>0):
 	element = statesToExplore[0]
 	statesToExplore.pop(0)
 	explore(stateMap[element])
+
+for key in stateMap:
+	DFA["states"].append(key)
+
 
 print("NFA:" + str(NFA))
 print("DFA:" + str(DFA))
