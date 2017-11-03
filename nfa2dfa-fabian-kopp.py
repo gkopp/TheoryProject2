@@ -17,7 +17,7 @@ NFA = {
 DFA = {
 	"machineName": "",
 	"alphabet": [],
-	"states": [],
+	"states": ["phi"],
 	"startState": "",
 	"acceptingStates": [],
 	"transferFunction": {}
@@ -54,6 +54,8 @@ def explore(remainingStates):
 	global stateMap
 
 	stateString = ''.join(remainingStates)
+	if [i for i in NFA["acceptingStates"] if i in remainingStates]:
+		DFA["acceptingStates"].append(stateString)
 	if (stateString not in newStates):
 		newStates.append(stateString)
 		statesToExplore.append(stateString)
@@ -134,6 +136,7 @@ f.close()
 
 DFA["machineName"] = NFA["machineName"] + " to DFA"
 DFA["alphabet"] = NFA["alphabet"]
+DFA["startState"] = NFA["startState"]
 
 statesToExplore = deepcopy(NFA["states"])
 newStates = deepcopy(statesToExplore)
@@ -147,6 +150,18 @@ while (len(statesToExplore)>0):
 for key in stateMap:
 	DFA["states"].append(key)
 
+print("\n\n")
+print(DFA["machineName"])
+print(DFA["alphabet"])
+print(DFA["states"])
+print(DFA["startState"])
+print(DFA["acceptingStates"])
 
-print("NFA:" + str(NFA))
-print("DFA:" + str(DFA))
+# print(DFA["transferFunction"].keys())
+# print(DFA["transferFunction"].values())
+# print(DFA["transferFunction"].items())
+
+for item in DFA["transferFunction"].items():
+	init = item[0]
+	for states in item[1].items():
+		print(init + "," + states[0] + "," + states[1])
