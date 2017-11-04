@@ -1,0 +1,68 @@
+M1:DFA from Fig. 1.44
+1:q,a,q
+2:q,b,q
+3:q2,a,q23
+4:q2,b,q3
+5:q3,a,q13
+6:q3,b,q
+7:q13,a,q13
+8:q13,b,q2
+9:q23,a,q123
+10:q23,b,q3
+11:q123,a,q123
+12:q123,b,q23
+String: a
+1,7,q13,a,q13
+Accepted
+String: baa
+1,8,q13,b,q2
+2,3,q2,a,q23
+3,9,q23,a,q123
+Accepted
+String: baba
+1,8,q13,b,q2
+2,3,q2,a,q23
+3,10,q23,b,q3
+4,5,q3,a,q13
+Accepted
+String: ababa
+1,7,q13,a,q13
+2,8,q13,b,q2
+3,3,q2,a,q23
+4,10,q23,b,q3
+5,5,q3,a,q13
+Accepted
+String: aaabbaaa
+1,7,q13,a,q13
+2,7,q13,a,q13
+3,7,q13,a,q13
+4,8,q13,b,q2
+5,4,q2,b,q3
+6,5,q3,a,q13
+7,7,q13,a,q13
+8,7,q13,a,q13
+Accepted
+String: ababaaa
+1,7,q13,a,q13
+2,8,q13,b,q2
+3,3,q2,a,q23
+4,10,q23,b,q3
+5,5,q3,a,q13
+6,7,q13,a,q13
+7,7,q13,a,q13
+Accepted
+String: ababaabaabaaa
+1,7,q13,a,q13
+2,8,q13,b,q2
+3,3,q2,a,q23
+4,10,q23,b,q3
+5,5,q3,a,q13
+6,7,q13,a,q13
+7,8,q13,b,q2
+8,3,q2,a,q23
+9,9,q23,a,q123
+10,12,q123,b,q23
+11,9,q23,a,q123
+12,11,q123,a,q123
+13,11,q123,a,q123
+Accepted
