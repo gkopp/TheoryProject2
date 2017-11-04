@@ -1,0 +1,11 @@
+NFA-mfabian1
+0,1
+A,B,C,D
+A
+A
+A,0,B
+A,1,C
+A,~,D
+B,1,A
+C,0,B
+D,0,C

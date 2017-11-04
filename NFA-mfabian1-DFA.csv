@@ -1,0 +1,17 @@
+NFA-mfabian1 - converted to  DFA
+0,1
+phi,A,B,C,D,AB,AC,AD,BC,BD,CD,ABC,ABD,ACD,BCD,ABCD
+AD
+AD
+C,1,phi
+C,0,B
+B,1,AD
+B,0,phi
+AD,1,C
+AD,0,BC
+BC,1,AD
+BC,0,B
+phi,1,phi
+phi,0,phi
+D,1,phi
+D,0,C
