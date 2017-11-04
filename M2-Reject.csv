@@ -1,0 +1,78 @@
+M1:DFA from Fig. 1.44
+1:q,a,q
+2:q,b,q
+3:q2,a,q23
+4:q2,b,q3
+5:q3,a,q13
+6:q3,b,q
+7:q13,a,q13
+8:q13,b,q2
+9:q23,a,q123
+10:q23,b,q3
+11:q123,a,q123
+12:q123,b,q23
+String: ba
+1,8,q13,b,q2
+2,3,q2,a,q23
+Rejected
+String: bb
+1,8,q13,b,q2
+2,4,q2,b,q3
+Rejected
+String: bbbb
+1,8,q13,b,q2
+2,4,q2,b,q3
+3,6,q3,b,q
+4,2,q,b,q
+Rejected
+String: babbbab
+1,8,q13,b,q2
+2,3,q2,a,q23
+3,10,q23,b,q3
+4,6,q3,b,q
+5,2,q,b,q
+6,1,q,a,q
+7,2,q,b,q
+Rejected
+String: bab
+1,8,q13,b,q2
+2,3,q2,a,q23
+3,10,q23,b,q3
+Rejected
+String: baaab
+1,8,q13,b,q2
+2,3,q2,a,q23
+3,9,q23,a,q123
+4,11,q123,a,q123
+5,12,q123,b,q23
+Rejected
+String: bbb
+1,8,q13,b,q2
+2,4,q2,b,q3
+3,6,q3,b,q
+Rejected
+String: baaabbbbbbbbabbaabbaaab
+1,8,q13,b,q2
+2,3,q2,a,q23
+3,9,q23,a,q123
+4,11,q123,a,q123
+5,12,q123,b,q23
+6,10,q23,b,q3
+7,6,q3,b,q
+8,2,q,b,q
+9,2,q,b,q
+10,2,q,b,q
+11,2,q,b,q
+12,2,q,b,q
+13,1,q,a,q
+14,2,q,b,q
+15,2,q,b,q
+16,1,q,a,q
+17,1,q,a,q
+18,2,q,b,q
+19,2,q,b,q
+20,1,q,a,q
+21,1,q,a,q
+22,1,q,a,q
+23,2,q,b,q
+Rejected

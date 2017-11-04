@@ -1,0 +1,14 @@
+NFA-gkopp 
+D,O,G
+q,r,s,t
+q
+t
+q,D,q
+q,O,q
+q,G,q
+q,D,r
+r,O,s
+s,G,t
+t,D,t
+t,O,t
+t,G,t

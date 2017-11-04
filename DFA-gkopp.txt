@@ -1,0 +1,10 @@
+DFA-gkopp 
+*,#
+q,r,s,t,u
+q
+t
+q,*,r
+r,*,s
+s,*,t
+t,#,u
+u,#,t
