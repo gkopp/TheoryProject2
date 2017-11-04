@@ -191,10 +191,12 @@ for i, line in enumerate(f):
 
 f.close()
 
-
-DFA["machineName"] = NFA["machineName"] + " - converted to DFA"
+# add labels to DFA
+DFA["machineName"] = NFA["machineName"] + " - converted to  DFA"
 DFA["alphabet"] = NFA["alphabet"]
 
+
+# create initieal state list
 statesToExplore = deepcopy(NFA["states"])
 newStates = deepcopy(statesToExplore)
 
@@ -208,10 +210,12 @@ for i in range(1,len(NFA["states"])+1):
         newState = ''.join(state)
         DFA["states"].append(newState)
 
+# add trap state if needed
 DFA["transferFunction"]["phi"] = {}
 for char in NFA["alphabet"]:
 	DFA["transferFunction"]["phi"][char] = "phi"
 
+# check each state that hasn't been traversed
 while (len(statesToExplore) > 0):
 	element = statesToExplore[0]
 	statesToExplore.pop(0)
@@ -227,6 +231,7 @@ while (len(statesToExplore) > 0):
 	getAcceptingStates(reachableStates)
 	explore(reachableStates)
 
+# send output to csv file
 outputName = sys.argv[1].replace(".txt","-DFA.csv")
 outputFile = open(outputName, "w")
 
