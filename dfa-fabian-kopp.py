@@ -123,4 +123,3 @@ for line in open(test_strings, 'r+'):
     
     else:
         print "Rejected"
-
