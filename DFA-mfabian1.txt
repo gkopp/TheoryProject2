@@ -1,0 +1,14 @@
+DFA-mfabian1
+0,1
+A,B,C,D,E,F,G,H
+A
+H
+A,0,B
+B,1,C
+C,0,D
+D,1,E
+E,0,F
+F,1,G
+G,0,H
+H,0,H
+H,1,H
