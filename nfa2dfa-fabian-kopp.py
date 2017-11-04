@@ -192,7 +192,7 @@ for i, line in enumerate(f):
 f.close()
 
 
-DFA["machineName"] = NFA["machineName"] + " to DFA"
+DFA["machineName"] = NFA["machineName"] + " - converted to DFA"
 DFA["alphabet"] = NFA["alphabet"]
 
 statesToExplore = deepcopy(NFA["states"])
@@ -227,15 +227,18 @@ while (len(statesToExplore) > 0):
 	getAcceptingStates(reachableStates)
 	explore(reachableStates)
 
+outputName = sys.argv[1].replace(".txt","-DFA.csv")
+outputFile = open(outputName, "w")
 
-
-print(DFA["machineName"])
-print(",".join(DFA["alphabet"]))
-print(",".join(DFA["states"]))
-print(DFA["startState"])
-print(",".join(DFA["acceptingStates"]))
+outputFile.write(DFA["machineName"] + "\n")
+outputFile.write(",".join(DFA["alphabet"]) + "\n")
+outputFile.write(",".join(DFA["states"]) + "\n" )
+outputFile.write(DFA["startState"]+ "\n")
+outputFile.write(",".join(DFA["acceptingStates"])+ "\n")
 
 for item in DFA["transferFunction"].items():
 	init = item[0]
 	for states in item[1].items():
-		print(init + "," + states[0] + "," + states[1])
+		outputFile.write(init + "," + states[0] + "," + states[1]+ "\n")
+
+outputFile.close()
