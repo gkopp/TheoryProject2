@@ -1,0 +1,84 @@
+NFA-gkopp - converted to  DFA
+1:phi,G,phi
+2:phi,D,phi
+3:phi,O,phi
+4:qr,G,q
+5:qr,D,qr
+6:qr,O,qs
+7:qt,G,qt
+8:qt,D,qrt
+9:qt,O,qt
+10:qs,G,qt
+11:qs,D,qr
+12:qs,O,q
+13:q,G,q
+14:q,D,qr
+15:q,O,q
+16:s,G,t
+17:s,D,phi
+18:s,O,phi
+19:r,G,phi
+20:r,D,phi
+21:r,O,s
+22:qrt,G,qt
+23:qrt,D,qrt
+24:qrt,O,qst
+25:t,G,t
+26:t,D,t
+27:t,O,t
+28:qst,G,qt
+29:qst,D,qrt
+30:qst,O,qt
+String: DOG
+1,14,q,D,qr
+2,6,qr,O,qs
+3,10,qs,G,qt
+Accepted
+String: DOGGO
+1,14,q,D,qr
+2,6,qr,O,qs
+3,10,qs,G,qt
+4,7,qt,G,qt
+5,9,qt,O,qt
+Accepted
+String: ODDOG
+1,15,q,O,q
+2,14,q,D,qr
+3,5,qr,D,qr
+4,6,qr,O,qs
+5,10,qs,G,qt
+Accepted
+String: ODDDDFFDOGDO
+1,15,q,O,q
+2,14,q,D,qr
+3,5,qr,D,qr
+4,5,qr,D,qr
+5,5,qr,D,qr
+8,5,qr,D,qr
+9,6,qr,O,qs
+10,10,qs,G,qt
+11,8,qt,D,qrt
+12,24,qrt,O,qst
+Accepted
+String: D
+1,14,q,D,qr
+Rejected
+String: DO
+1,14,q,D,qr
+2,6,qr,O,qs
+Rejected
+String: GDO
+1,13,q,G,q
+2,14,q,D,qr
+3,6,qr,O,qs
+Rejected
+String: GDODGGGO
+1,13,q,G,q
+2,14,q,D,qr
+3,6,qr,O,qs
+4,11,qs,D,qr
+5,4,qr,G,q
+6,13,q,G,q
+7,13,q,G,q
+8,15,q,O,q
+Rejected
