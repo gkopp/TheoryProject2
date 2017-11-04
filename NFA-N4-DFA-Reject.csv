@@ -1,0 +1,91 @@
+NFA N4 Pg 57 - converted to  DFA
+1:phi,a,phi
+2:phi,b,phi
+3:23,a,123
+4:23,b,3
+5:13,a,13
+6:13,b,2
+7:3,a,13
+8:3,b,phi
+9:123,a,123
+10:123,b,23
+11:2,a,23
+12:2,b,3
+String: b
+1,6,13,b,2
+Rejected
+String: bb
+1,6,13,b,2
+2,12,2,b,3
+Rejected
+String: ba
+1,6,13,b,2
+2,11,2,a,23
+Rejected
+String: bab
+1,6,13,b,2
+2,11,2,a,23
+3,4,23,b,3
+Rejected
+String: bbb
+1,6,13,b,2
+2,12,2,b,3
+3,8,3,b,phi
+Rejected
+String: baaab
+1,6,13,b,2
+2,11,2,a,23
+3,3,23,a,123
+4,9,123,a,123
+5,10,123,b,23
+Rejected
+String: ababbb
+1,5,13,a,13
+2,6,13,b,2
+3,11,2,a,23
+4,4,23,b,3
+5,8,3,b,phi
+6,2,phi,b,phi
+Rejected
+String: baaabab
+1,6,13,b,2
+2,11,2,a,23
+3,3,23,a,123
+4,9,123,a,123
+5,10,123,b,23
+6,3,23,a,123
+7,10,123,b,23
+Rejected
+String: abaaaabb
+1,5,13,a,13
+2,6,13,b,2
+3,11,2,a,23
+4,3,23,a,123
+5,9,123,a,123
+6,9,123,a,123
+7,10,123,b,23
+8,4,23,b,3
+Rejected
+String: aaabababb
+1,5,13,a,13
+2,5,13,a,13
+3,5,13,a,13
+4,6,13,b,2
+5,11,2,a,23
+6,4,23,b,3
+7,7,3,a,13
+8,6,13,b,2
+9,12,2,b,3
+Rejected
+String: bbaaaaabbb
+1,6,13,b,2
+2,12,2,b,3
+3,7,3,a,13
+4,5,13,a,13
+5,5,13,a,13
+6,5,13,a,13
+7,5,13,a,13
+8,6,13,b,2
+9,12,2,b,3
+10,8,3,b,phi
+Rejected

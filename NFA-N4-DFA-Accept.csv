@@ -1,0 +1,76 @@
+NFA N4 Pg 57 - converted to  DFA
+1:phi,a,phi
+2:phi,b,phi
+3:23,a,123
+4:23,b,3
+5:13,a,13
+6:13,b,2
+7:3,a,13
+8:3,b,phi
+9:123,a,123
+10:123,b,23
+11:2,a,23
+12:2,b,3
+String: a
+1,5,13,a,13
+Accepted
+String: aa
+1,5,13,a,13
+2,5,13,a,13
+Accepted
+String: bba
+1,6,13,b,2
+2,12,2,b,3
+3,7,3,a,13
+Accepted
+String: baba
+1,6,13,b,2
+2,11,2,a,23
+3,4,23,b,3
+4,7,3,a,13
+Accepted
+String: baaa
+1,6,13,b,2
+2,11,2,a,23
+3,3,23,a,123
+4,9,123,a,123
+Accepted
+String: baaaa
+1,6,13,b,2
+2,11,2,a,23
+3,3,23,a,123
+4,9,123,a,123
+5,9,123,a,123
+Accepted
+String: aabba
+1,5,13,a,13
+2,5,13,a,13
+3,6,13,b,2
+4,12,2,b,3
+5,7,3,a,13
+Accepted
+String: baaaba
+1,6,13,b,2
+2,11,2,a,23
+3,3,23,a,123
+4,9,123,a,123
+5,10,123,b,23
+6,3,23,a,123
+Accepted
+String: abaaaa
+1,5,13,a,13
+2,6,13,b,2
+3,11,2,a,23
+4,3,23,a,123
+5,9,123,a,123
+6,9,123,a,123
+Accepted
+String: aaababa
+1,5,13,a,13
+2,5,13,a,13
+3,5,13,a,13
+4,6,13,b,2
+5,11,2,a,23
+6,4,23,b,3
+7,7,3,a,13
+Accepted

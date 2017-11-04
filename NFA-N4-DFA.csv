@@ -1,4 +1,4 @@
-NFA N4 Pg 57 - converted to DFA
+NFA N4 Pg 57 - converted to  DFA
 a,b
 phi,1,2,3,12,13,23,123
 13
