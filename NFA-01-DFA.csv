@@ -1,0 +1,17 @@
+NFA for strings ending with 01 - converted to  DFA
+0,1
+phi,q0,q1,q2,q0q1,q0q2,q1q2,q0q1q2
+q0
+q2,q0q2
+q1,1,q2
+q1,0,phi
+q0,1,q0
+q0,0,q0q1
+phi,1,phi
+phi,0,phi
+q2,1,phi
+q2,0,phi
+q0q1,1,q0q2
+q0q1,0,q0q1
+q0q2,1,q0
+q0q2,0,q0q1

@@ -1,0 +1,56 @@
+DFA-gkopp
+1:q,*,r
+2:r,*,s
+3:s,*,t
+4:t,#,u
+5:u,#,t
+String: *
+1,1,q,*,r
+Rejected
+String: #
+Rejected
+String: **##
+1,1,q,*,r
+2,2,r,*,s
+Rejected
+String: #*
+Rejected
+String: ***###
+1,1,q,*,r
+2,2,r,*,s
+3,3,s,*,t
+4,4,t,#,u
+5,5,u,#,t
+6,4,t,#,u
+Rejected
+String: #*###*##*
+Rejected
+String: ***
+1,1,q,*,r
+2,2,r,*,s
+3,3,s,*,t
+Accepted
+String: ***##
+1,1,q,*,r
+2,2,r,*,s
+3,3,s,*,t
+4,4,t,#,u
+5,5,u,#,t
+Accepted
+String: ***##########
+1,1,q,*,r
+2,2,r,*,s
+3,3,s,*,t
+4,4,t,#,u
+5,5,u,#,t
+6,4,t,#,u
+7,5,u,#,t
+8,4,t,#,u
+9,5,u,#,t
+10,4,t,#,u
+11,5,u,#,t
+12,4,t,#,u
+13,5,u,#,t
+Accepted
+String: ###**********
+Rejected
