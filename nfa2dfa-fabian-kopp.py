@@ -99,16 +99,13 @@ for i, line in enumerate(f):
 			colon = line.index(':')
 			machineName = line[:colon]
 			NFA["machineName"] = machineName
-			print ("Machine name: " + machineName)
 		else:
 			machineName = line
 			NFA["machineName"] = machineName
-			print ("Machine name: " + machineName)
 
 	elif i == 1:
 		alphabet = line.split(',')
 		NFA["alphabet"] = alphabet
-		print("Alphabet: " + str(alphabet))
 
 	elif i == 2:
 		states = line.split(',')
@@ -116,19 +113,13 @@ for i, line in enumerate(f):
 		for state in states:
 			NFA["transferFunction"][state] = {}
 			stateMap[state] = [state]
-		print("States: " + str(states))
 	elif i == 3:
 		startState = line
 		NFA["startState"] = startState
-		print("Start state : " + startState)
 	elif i == 4:
 		acceptingStates = line.split(',')
-		#rejectedStates = list(set(states).difference(set(acceptingStates)))
 		NFA["acceptingStates"] = acceptingStates
-		#NFA["rejectedStates"] = rejectedStates
-		print("Accepting states : " + str(acceptingStates))
 	else:
-		print("Rule "+ str(i-4) +" : "+ line)
 		read_rules(line)
 
 f.close()
@@ -150,16 +141,11 @@ while (len(statesToExplore)>0):
 for key in stateMap:
 	DFA["states"].append(key)
 
-print("\n\n")
 print(DFA["machineName"])
-print(DFA["alphabet"])
-print(DFA["states"])
+print(",".join(DFA["alphabet"]))
+print(",".join(DFA["states"]))
 print(DFA["startState"])
-print(DFA["acceptingStates"])
-
-# print(DFA["transferFunction"].keys())
-# print(DFA["transferFunction"].values())
-# print(DFA["transferFunction"].items())
+print(",".join(DFA["acceptingStates"]))
 
 for item in DFA["transferFunction"].items():
 	init = item[0]
